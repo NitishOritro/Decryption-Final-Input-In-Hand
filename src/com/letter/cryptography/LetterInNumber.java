@@ -15,26 +15,18 @@ public class LetterInNumber
     
     public LetterInNumber(char letter) 
     {
-        //this.letter = letter;
-        //this.number = number;
         int letterAsciiValue = (int) letter;
         letterAsciiValue = letterAsciiValue - 64;
-        //System.out.println(letterAsciiValue);
         this.number = letterAsciiValue;
     }
     
     public LetterInNumber(int number) 
     {
-        //this.letter = letter;
-        //this.number = number;
         int letterAsciiValue = number + 64;
         char asciiValueToCharacter = (char) letterAsciiValue;
-        //System.out.println(asciiValueToCharacter);
         this.letter = asciiValueToCharacter;
     }
-    
-    
-    
+  
     public char getLetter() 
     {
         return letter;
