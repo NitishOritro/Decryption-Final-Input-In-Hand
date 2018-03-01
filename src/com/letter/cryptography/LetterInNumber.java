@@ -16,7 +16,14 @@ public class LetterInNumber
     public LetterInNumber(char letter) 
     {
         int letterAsciiValue = (int) letter;
-        letterAsciiValue = letterAsciiValue - 64;
+        if(letterAsciiValue >= 97 && letterAsciiValue <= 122)
+        {
+            letterAsciiValue = letterAsciiValue - 70;
+        }
+        else if(letterAsciiValue >= 65 && letterAsciiValue <= 90)
+        {
+            letterAsciiValue = letterAsciiValue - 64;
+        }
         this.number = letterAsciiValue;
     }
     
