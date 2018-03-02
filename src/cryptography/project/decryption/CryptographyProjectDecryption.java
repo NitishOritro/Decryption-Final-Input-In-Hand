@@ -73,7 +73,16 @@ public class CryptographyProjectDecryption
                         cipherValue = 26;
                     }
                     LetterInNumber cipherInLetter = new LetterInNumber(cipherValue);
-                    ciphertextRotor[i][j] = cipherInLetter.getLetter();
+                    if(Character.isLowerCase(ciphertextRotor[i][j]))
+                    {
+                        
+                        ciphertextRotor[i][j] = Character.toLowerCase(cipherInLetter.getLetter());
+                        
+                    }
+                    else
+                    {
+                        ciphertextRotor[i][j] = cipherInLetter.getLetter();
+                    }
                 }
             }
         }
@@ -148,8 +157,17 @@ public class CryptographyProjectDecryption
 
                     LetterInNumber numberInLetter = new LetterInNumber(cipherValue);
 
-                    char cipherCharacter = numberInLetter.getLetter();
-                    generatePlaintext = generatePlaintext + cipherCharacter;
+                    if(Character.isLowerCase(exactPlaintext.charAt(i)))
+                    {
+                        char cipherCharacter = numberInLetter.getLetter();
+                        cipherCharacter = Character.toLowerCase(cipherCharacter);
+                        generatePlaintext = generatePlaintext + cipherCharacter;
+                    }
+                    else
+                    {
+                        char cipherCharacter = numberInLetter.getLetter();
+                        generatePlaintext = generatePlaintext + cipherCharacter;
+                    }
                 }
                 else if(exactPlaintext.charAt(i) != ' ' || Character.isWhitespace(exactPlaintext.charAt(i)))
                 {
