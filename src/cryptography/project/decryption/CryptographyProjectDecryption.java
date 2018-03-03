@@ -63,7 +63,7 @@ public class CryptographyProjectDecryption
                 {
                     LetterInNumber cipherInNumber = new LetterInNumber(ciphertextRotor[i][j]);
                     
-                    int cipherValue =  (cipherInNumber.getNumber() - i) % 26;       //(c-rowNum) mod 26
+                    int cipherValue =  (cipherInNumber.getNumber() - i - 1) % 26;       
                     if(cipherValue < 0)
                     {
                         cipherValue = cipherValue + 26;
@@ -144,7 +144,7 @@ public class CryptographyProjectDecryption
                 if(Character.isLetter(exactPlaintext.charAt(i)) && exactPlaintext.charAt(i) != ' ')
                 {
                     LetterInNumber letterInNumber = new LetterInNumber(exactPlaintext.charAt(i));
-                    int cipherValue =  (letterInNumber.getNumber() - n) % 26;       //(p+n) mod 26
+                    int cipherValue =  (letterInNumber.getNumber() - n) % 26;       
 
                     if(cipherValue == 0)
                     {
@@ -174,7 +174,7 @@ public class CryptographyProjectDecryption
                     generatePlaintext = generatePlaintext + exactPlaintext.charAt(i);
                 }
             }
-        System.out.println("\nWhene Key is "+ n +"\nGenerate Final Plaintext is : " +generatePlaintext);
+        System.out.println("\nWhen Key is "+ n +"\nGenerate Final Plaintext is : " +generatePlaintext);
         generatePlaintext = "";
         }
 
