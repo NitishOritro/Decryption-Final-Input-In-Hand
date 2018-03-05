@@ -119,9 +119,9 @@ public class CryptographyProjectDecryption
         {
             for(j=0;j<row;j++)
             {
-                if(pointer != correctionCipherTextToPlaintext.length())
+                if(pointer <= correctionCipherTextToPlaintext.length())
                 {
-                    if(j == row-1 && i >= padding)
+                    if(j == row-1 && i >= padding && padding != 0)
                     {
                         ciphertextRotor [j][i] = 'X';
                     }
